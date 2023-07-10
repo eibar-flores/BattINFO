@@ -1,7 +1,42 @@
 import markdown
-from html_styling import render_html_top, render_html_bottom
 
 
+########## RENDER HTML TOP ################
+
+def render_html_top() -> str:
+
+    top_html = """
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset="UTF-8">
+                <title>BattINFO</title>
+                <link rel="stylesheet" type="text/css" href="./css/style.css">
+                <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+        </head>  
+        <body>      
+        """
+
+    banner =  '''
+        <div class="banner">
+            <a href="index.html">
+                <img src="./assets/banner.jpg" alt="Banner Image">
+            </a>
+        </div>
+        '''
+    
+    return top_html + banner
+
+########## RENDER HTML BOTTOM ################
+
+def render_html_bottom() -> str:
+    return """
+            </body>
+        </html>
+        """
+
+
+########## LOAD MD INTO HTML  ################
 
 def load_md_into_html(path:str)-> str:
     
@@ -18,19 +53,19 @@ def load_md_into_html(path:str)-> str:
 
 def rendering_workflow():
 
-     ########## PAGES 
+     # PAGES 
     pages = [
         {"filename":"about.html", 
-         "path":"./docs_dev/assets/about.md"},
+         "path":"./docs/assets/about.md"},
 
         {"filename":"index.html", 
-         "path":"./docs_dev/assets/index.md"},
+         "path":"./docs/assets/index.md"},
 
          {"filename":"contribute.html", 
-         "path":"./docs_dev/assets/contribute.md"},
+         "path":"./docs/assets/contribute.md"},
     ]
 
-    ########## GENERATE PAGES 
+    # GENERATE PAGES 
 
     for page in pages:
 
@@ -39,7 +74,7 @@ def rendering_workflow():
         html += load_md_into_html(page["path"])
         html += render_html_bottom()
 
-        with open("./docs_dev/"+page["filename"], "w", encoding="utf-8") as f:
+        with open("./docs/"+page["filename"], "w", encoding="utf-8") as f:
             f.write(html)
 
 

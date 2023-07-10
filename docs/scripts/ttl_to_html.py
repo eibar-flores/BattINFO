@@ -171,7 +171,7 @@ def rendering_workflow():
         html += entities_to_html(entities_list)
         html += render_html_bottom()
 
-        with open("./docs_dev/"+page["filename"], "w", encoding="utf-8") as f:
+        with open("./docs/"+page["filename"], "w", encoding="utf-8") as f:
             f.write(html)
 
 
