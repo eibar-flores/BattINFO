@@ -12,10 +12,7 @@ env:
 jobs:
   update_pages:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
+      steps:
       - name: Set up Python
         uses: actions/setup-python@v4 #Uses python install action from here: https://github.com/marketplace?type=actions
         with:
