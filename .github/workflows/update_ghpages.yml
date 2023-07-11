@@ -39,6 +39,6 @@ jobs:
         git config --global user.email "${GIT_USER_EMAIL}"
         git config --global user.name "${GIT_USER_NAME}"
         git config pull.rebase false
-        git add docs/.
+        git add .
         git commit -m "Automatic update of github pages"
         git push
