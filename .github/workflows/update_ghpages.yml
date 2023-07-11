@@ -12,7 +12,6 @@ env:
 jobs:
   update_pages:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -41,4 +40,4 @@ jobs:
         git config pull.rebase false
         git add .
         git commit -m "Automatic update of github pages"
-        git push
+        git push origin master
