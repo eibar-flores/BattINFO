@@ -10,7 +10,7 @@ env:
   GIT_USER_EMAIL: "BattINFO@big-map.org"
 
 jobs:
-  update_pages:
+  updatepages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
